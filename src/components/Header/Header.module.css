@@ -1,9 +1,9 @@
         /* Header section */
 
         .header {
-            background-color: #333;
-            color: #fff;
-            width:  102%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
         .navigation ul {
@@ -20,5 +20,5 @@
         }
 
         .header-nav-li:hover {
-            color: #45a049;
+            color: #1a73e8;;
         }

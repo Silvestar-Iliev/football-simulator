@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 
 import { Header } from "./components/Header/Header";
-import { Home } from "./components/Home/Home";
+import HomePage from "./components/HomePage/HomePage";
 
 function App() {
   return (
@@ -10,7 +10,8 @@ function App() {
       <Header />
       <main id="main">
         <Routes>
-            <Route path="/" element={<Home />}/>      
+            <Route path="/" element={<HomePage />}/>      
+
         </Routes>
       </main>   
     </>
