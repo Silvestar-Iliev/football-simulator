@@ -37,7 +37,31 @@
 
 .team-form{
     display: flex;
-    gap: 20px;
-    /* width: 9%; */
+    justify-content: space-between;
+    align-items: center;
 }
 
+.team-form span{
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1px;
+}
+
+
+.win{
+    background-color: green; 
+}
+
+.drawn{
+    background-color: yellow; 
+}
+
+.lost{
+    background-color: red; 
+}

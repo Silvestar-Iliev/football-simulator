@@ -23,7 +23,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 10,
             selected: false,
             group: 'A',
@@ -38,7 +38,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 9,
             selected: false,
             group: 'A',
@@ -53,7 +53,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 8,
             selected: false,
             group: 'A',
@@ -68,7 +68,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 8,
             selected: false,
             group: 'A',
@@ -85,7 +85,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 10,
             selected: false,
             group: 'B',
@@ -100,7 +100,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 10,
             selected: false,
             group: 'B',
@@ -115,7 +115,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 9,
             selected: false,
             group: 'B',
@@ -130,7 +130,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 7,
             selected: false,
             group: 'B',
@@ -147,7 +147,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 10,
             selected: false,
             group: 'C',
@@ -162,7 +162,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 9,
             selected: false,
             group: 'C',
@@ -177,7 +177,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 8,
             selected: false,
             group: 'C',
@@ -192,7 +192,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 7,
             selected: false,
             group: 'C',
@@ -209,7 +209,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 10,
             selected: false,
             group: 'D',
@@ -224,7 +224,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 9,
             selected: false,
             group: 'D',
@@ -239,7 +239,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 8,
             selected: false,
             group: 'D',
@@ -254,7 +254,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 8,
             selected: false,
             group: 'D',
@@ -271,7 +271,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 9,
             selected: false,
             group: 'E',
@@ -286,7 +286,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 7,
             selected: false,
             group: 'E',
@@ -301,7 +301,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 7,
             selected: false,
             group: 'E',
@@ -316,7 +316,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 8,
             selected: false,
             group: 'E',
@@ -333,7 +333,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 9,
             selected: false,
             group: 'F',
@@ -348,7 +348,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 8,
             selected: false,
             group: 'F',
@@ -363,7 +363,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 8,
             selected: false,
             group: 'F',
@@ -378,7 +378,7 @@ export const GameProvider = ({
             for: 0,
             against: 0,
             points: 0,
-            form: [],
+            form: {},
             raiting: 7,
             selected: false,
             group: 'F',
@@ -387,6 +387,33 @@ export const GameProvider = ({
     }
 
 
+    function sortTeams(teams) {
+        teams.sort((a, b) => {
+          // Сортиране по брой спечелени точки
+          if (a.points !== b.points) {
+            return a.points - b.points;
+          }
+      
+          // Ако точките са равни, сортиране по директен двубой
+          if (a.directResult !== b.directResult) {
+            if (a.directResult === "win") {
+              return -1;
+            } else if (b.directResult === "win") {
+              return 1;
+            }
+          }
+      
+          // Ако директният двубой е равен, сортиране по голова разлика
+          if (a.goalDifference !== b.goalDifference) {
+            return a.goalDifference - b.goalDifference;
+          }
+      
+          // Ако головата разлика е равна, сортиране по вкарани голове
+          return a.goals - b.goals;
+        });
+      
+        return teams;
+      }
 
     const context = {
         teams,

@@ -24,13 +24,13 @@ export const DinamicRowComponent = ({
                         <p>{t.points}</p>
                     </div>
                     <div className={styles["team-form"]}>
-                        {t.form.map(x => {
-                            if (x === "w") {
-                                <span className={styles["green"]}></span>
-                            }else if(x === "d") {
-                                <span className={styles["yellow"]}></span>
-                            }else if(x === "l"){
-                                <span className={styles["red"]}></span>
+                        {Object.values(t.form).map(x => {
+                            if (x === "W") {
+                                return <span className={styles["win"]}><p>W</p></span>
+                            }else if(x === "D") {
+                                return <span className={styles["drawn"]}><p>D</p></span>
+                            }else if(x === "L"){
+                                return <span className={styles["lost"]}><p>L</p></span>
                             }
                         })}
                     </div>
