@@ -1,19 +1,26 @@
 import { Routes, Route } from "react-router-dom";
 
+import { GameProvider } from "./contexts/GameContext";
 
-import { Header } from "./components/Header/Header";
-import HomePage from "./components/HomePage/HomePage";
+
+import Header from "./components/Header/Header";
+import HomeComponent from "./components/HomeComponent/HomeComponent";
+import GameComponent from "./components/GameComponent/GameComponent";
+import AboutComponent from "./components/AboutComponent/AboutComponent";
 
 function App() {
   return (
     <>  
-      <Header />
-      <main id="main">
-        <Routes>
-            <Route path="/" element={<HomePage />}/>      
-
-        </Routes>
-      </main>   
+      <GameProvider>
+        <Header />
+        <main id="main">
+          <Routes>
+              <Route path="/" element={<HomeComponent />}/>      
+              <Route path="/game" element={<GameComponent />}/>   
+              <Route path="/about" element={<AboutComponent />}/>   
+          </Routes>
+        </main>         
+      </GameProvider>
     </>
 
   );

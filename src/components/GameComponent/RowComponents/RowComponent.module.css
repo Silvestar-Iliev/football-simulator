@@ -1,0 +1,43 @@
+.row{
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid lightgray;
+}
+
+.row p{
+    font-size: 12px;
+}
+
+.team-info{
+    display: flex;
+    gap: 20px;
+    width: 24%;
+    align-items: center;
+}
+
+.team-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.team-statistic{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-statistic p {
+    width: 8%;
+    justify-self: center;
+}
+
+
+
+.team-form{
+    display: flex;
+    gap: 20px;
+    /* width: 9%; */
+}
+

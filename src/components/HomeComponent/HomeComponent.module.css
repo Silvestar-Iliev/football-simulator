@@ -1,5 +1,6 @@
 .home-page {
-    background-color: #222;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(29,25,77,1) 51%, rgba(0,212,255,1) 100%);
     color: #fff;
     font-family: sans-serif;
     font-size: 16px;
@@ -37,7 +38,8 @@
     width: 100%;
     padding: 15px 30px;
     border: 1px solid #ccc;
-    background-color: #000;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(39,190,54,1) 100%, rgba(0,212,255,1) 100%);
     color: #fff;
     margin-top: 20px;
     font-size: 14px;
@@ -45,6 +47,8 @@
 
   .home-page button:hover {
     cursor: pointer;
-    background-color: #1a73e8;;
+    background: rgb(68,80,62);
+    background: linear-gradient(90deg, rgba(68,80,62,1) 20%, rgba(214,127,55,1) 66%, rgba(255,149,0,1) 96%);
    
   }
+
